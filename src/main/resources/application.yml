@@ -1,0 +1,28 @@
+spring:
+  application.name: pybo
+
+#h2 database
+  h2.console.enabled : true
+  datasource:
+    url: jdbc:h2:file:./db/H2/data
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  
+  #jpa
+  jpa:
+    database-platform: H2
+    hibernate.ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show: true
+
+  
+  #thymeleaf
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
+#sql??
+logging.level.org.hibernate.SQL: debug
